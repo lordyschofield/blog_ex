@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     
-    <div class="row background=grey">
+    <div class="row background-grey">
 
             <div class="col-3 p-5">
                 <img src="/img/logo.png" class="w-100 rounded-circle">
@@ -16,7 +16,7 @@
             
             <div class="d-flex">
                 <div class="pr-5"><strong>24K </strong>POST</div>
-                <div class="pr-5"><strong>25M </strong>FOLLOWERS</div>
+                <div class="pr-5"><strong>100K </strong>FOLLOWERS</div>
                 <div class="pr-5"><strong>1M </strong>FOLLOWING</div>
 
 
