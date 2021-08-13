@@ -13,8 +13,8 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/profiles', [ProfilesController::class, 'index'])->name('profiles');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/profiles/{id}', [ProfilesController::class, 'index'])->name('profiles');
+Route::get('/home/{id}', [HomeController::class, 'index'])->name('home');
 
 Route::get('/', function () {
     return view('welcome');
