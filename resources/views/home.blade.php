@@ -11,7 +11,7 @@
 
             <div class="col-9 p-5">
                 <div class="d-flex align-items-center pb-4">
-                <h1>Summertime</h1>
+                <h1>{{$id->username}} </h1>
                 </div>
             
             <div class="d-flex">
