@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -40,4 +41,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    //child relationship betweeen profile.php to user.php
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+        
+
+    }
+        //functionality that creates profile when we are creating new user
+        protected static function boot()
+        {
+            parent::boot();
+    
+            static::created(function($user){
+    
+                $user->profile()->create([
+                    'title'=>$user->username
+                ]);
+    
+            });
+        }
+    
+
 }

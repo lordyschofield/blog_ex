@@ -15,6 +15,8 @@ use App\Http\Controllers\HomeController;
 */
 Route::get('/profiles/{id}', [ProfilesController::class, 'index'])->name('profiles');
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });

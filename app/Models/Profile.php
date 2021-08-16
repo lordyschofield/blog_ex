@@ -9,4 +9,16 @@ class Profile extends Model
 {
     use HasFactory;
     
+    protected $guarded = [];
+
+    //parent relationship between Profile.php and User.php
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+
+
+
+    }
+
+
 }
