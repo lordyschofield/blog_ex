@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfilesController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,8 @@ use App\Http\Controllers\HomeController;
 |
 */
 Route::get('/profiles/{id}', [ProfilesController::class, 'index'])->name('profiles');
-
-
+Route::get('/p/create',[PostsController::class,'create']);
+Route::post('/p',[PostsController::class,'store']);
 
 Route::get('/', function () {
     return view('welcome');

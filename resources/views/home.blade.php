@@ -9,11 +9,16 @@
                 <img src="/img/logo.png" class="w-100 rounded-circle">
             </div>
 
-            <div class="col-9 p-5">
-                <div class="d-flex align-items-center pb-4">
-                <h1>{{$id->username}} </h1>
-                </div>
-            
+            <div class="d-flex justify-content-between align-items-baseline">
+                    <div class="col-9 p-5">
+                        <div class="d-flex align-items-center pb-4">
+                        <h1>{{$id->username}} </h1>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-primary">Add new Post</a>
+            </div>            
+
+
             <div class="d-flex">
                 <div class="pr-5"><strong>24K </strong>POST</div>
                 <div class="pr-5"><strong>100K </strong>FOLLOWERS</div>
@@ -22,9 +27,9 @@
 
             </div>    
             
-            <div class="pt-4 font-weight-bold">Summertime Saga</div>
-            <div>This is a sample description</div>
-            <div><a href="summertimesaga.com">summertimesaga.com</a></div>
+            <div class="pt-4 font-weight-bold">{{ $id->profile->title }}</div>
+            <div>{{ $id->profile->description }}</div>
+            <div><a href="summertimesaga.com">{{ $id->profile->url }}</a></div>
     
 
             </div>
@@ -42,16 +47,6 @@
             <div class="col-4">
                 <img src="img/post3.png" class="w-100 h-50 ">
             </div>
-            <div class="col-4">
-                <img src="img/post4.png" class="w-100 h-50 ">
-            </div>
-            <div class="col-4">
-                <img src="img/post5.png" class="w-100 h-50 ">
-            </div>
-            <div class="col-4">
-                <img src="img/post6.png" class="w-100 h-50 ">
-            </div>
-
 
         </div>
 
