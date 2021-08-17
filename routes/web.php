@@ -14,7 +14,8 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/profiles/{id}', [ProfilesController::class, 'index'])->name('profiles');
+
+Route::get('/profile/{id}', [ProfilesController::class, 'index'])->name('profiles');
 Route::get('/p/create',[PostsController::class,'create']);
 Route::post('/p',[PostsController::class,'store']);
 

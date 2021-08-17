@@ -5,6 +5,15 @@ namespace App\Http\Controllers;
 
 class PostsController extends Controller
 {
+    //construct function for authentication on postscontroller
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
+
+    //method for creating a post
     public function create()
     {
         return view('posts.create');
@@ -12,7 +21,7 @@ class PostsController extends Controller
 
     }
 
-
+    // method for storing post on database
     public function store()
         {
 
@@ -22,9 +31,15 @@ class PostsController extends Controller
 
             ]);
 
-            
+            $imagePath= request('image')->store('uploads','public');
+            auth()->user()->posts()->create([
+                'caption' => $data['caption'],
+                'image' => $imagePath
 
-            dd(request()->all());
+
+            ]);
+
+            return redirect('/profile/'.auth()->user()->id);
 
         }
 }

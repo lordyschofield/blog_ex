@@ -50,6 +50,19 @@ class User extends Authenticatable
         
 
     }
+
+
+    public function posts()
+        {
+
+            return $this->hasMany(Post::class);
+
+        }
+
+
+
+
+
         //functionality that creates profile when we are creating new user
         protected static function boot()
         {
