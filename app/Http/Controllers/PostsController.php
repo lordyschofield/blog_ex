@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Intervention\Image\Facades\Image;
+use App\Post;
 
 
 class PostsController extends Controller
@@ -32,14 +34,30 @@ class PostsController extends Controller
             ]);
 
             $imagePath= request('image')->store('uploads','public');
+            
+            // image resize for uniform display on webpage
+            $image = Image::make(public_path("storage/{$imagePath}"))->resize(1200,1200);
+            $image->save();
+            
             auth()->user()->posts()->create([
                 'caption' => $data['caption'],
                 'image' => $imagePath
 
 
+
             ]);
 
+            
+
             return redirect('/profile/'.auth()->user()->id);
+
+        }
+
+        public function show(\App\Models\Post $post)
+        {
+
+            dd($post);
+
 
         }
 }
