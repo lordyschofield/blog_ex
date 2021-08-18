@@ -53,11 +53,10 @@ class PostsController extends Controller
 
         }
 
-        public function show(\App\Models\Post $post)
+        public function view(\App\Models\Post $post)
         {
 
-            dd($post);
-
-
+            return view ("posts.show");
+            
         }
 }
