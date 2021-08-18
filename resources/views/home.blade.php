@@ -17,7 +17,7 @@
                                 <h1>{{$id->username}} </h1>
                                 </div>
                             </div>
-                            <a href="/p/create" class="btn btn-primary">Add New Post</a>
+                            <a href="/p/create" method="post" class="btn btn-primary">Add New Post</a>
                     </div>            
 
 

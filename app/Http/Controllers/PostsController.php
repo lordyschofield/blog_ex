@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Intervention\Image\Facades\Image;
-use App\Post;
+use App\Models;
 
 
 class PostsController extends Controller

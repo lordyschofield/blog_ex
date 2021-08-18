@@ -15,9 +15,10 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::get('/profile/{id}', [ProfilesController::class, 'index'])->name('profiles');
-Route::get('/p/{post}',[PostsController::class,'show']);
+Route::get('/profile/{id}', [ProfilesController::class,'index'])->name('profiles');
 Route::get('/p/create',[PostsController::class,'create']);
+Route::get('/p/{post}',[PostsController::class,'show']);
+
 Route::post('/p',[PostsController::class,'store']);
 
 Route::get('/', function () {
