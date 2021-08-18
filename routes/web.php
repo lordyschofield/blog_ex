@@ -14,16 +14,21 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/profile/{id}', [ProfilesController::class,'index'])->name('profiles');
-Route::get('/p/create',[PostsController::class,'create']);
-Route::get('/p/{post}',[PostsController::class,'show']);
-
-Route::post('/p',[PostsController::class,'store']);
-
+Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::post('/p',[PostsController::class,'store']);
+Route::get('/p/create',[PostsController::class,'create']);
+Route::get('/p/{post}',[PostsController::class,'show']);
+
+Route::get('/profile/{id}', [ProfilesController::class,'index'])->name('profiles.index');
+Route::get('/profile/{id}/edit', [ProfilesController::class,'edit'])->name('profiles.edit');
+Route::patch('/profile/{id}', [ProfilesController::class,'update'])->name('profiles.update');
+
+
+
+
+
 

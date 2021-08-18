@@ -17,9 +17,14 @@
                                 <h1>{{$id->username}} </h1>
                                 </div>
                             </div>
-                            <a href="/p/create" class="btn btn-primary">Add New Post</a>
-                    </div>            
+                        @can('update',$id->profile)
+                        <a href="/p/create" class="btn btn-primary">Add New Post</a>
+                        @endcan
+                    </div>
 
+            @can('update',$id->profile)           
+            <a href="/profile/{{ $id->id }}/edit">Edit Profile</a>
+            @endcan
 
             <div class="d-flex">
                 <div class="pr-5"><strong>{{$id->posts->count()}}</strong> POST</div>

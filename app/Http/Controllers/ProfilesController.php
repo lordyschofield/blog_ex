@@ -22,15 +22,47 @@ class ProfilesController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($id)
+    public function index(User $id)
     {
         
-        $id = User::findOrFail($id);
+        // $id = User::findOrFail($id);
         
 
-        return view('home',[
-            'id' => $id 
+        // return view('home',[
+        //     'id' => $id 
             
-        ]);
+        // ]);
+
+        return view('profiles.index', compact('id'));
+
+
+
     }
+
+
+
+
+    public function edit(User $id)
+    {
+        $this->authorize('update',$id->profile); 
+        return view('profiles.edit', compact('id'));
+
+    }
+
+    public function update(User $id)
+    {
+
+     $data = request()->validate([
+        'title' => 'required',
+        'description' => 'required',
+        'url' => 'url',
+        'image' => ''
+     ]);
+
+    auth()->user()->profile->update($data);
+
+     return redirect("/profile/{$id->id}");
+
+    }
+
 }

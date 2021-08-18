@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Intervention\Image\Facades\Image;
-use App\Models;
+
 
 
 class PostsController extends Controller
@@ -53,10 +53,10 @@ class PostsController extends Controller
 
         }
 
-        public function view(\App\Models\Post $post)
+        public function show(\App\Models\Post $post)
         {
 
-            return view ("posts.show");
+            return view('posts.show',compact('post'));
             
         }
 }
