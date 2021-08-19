@@ -7,7 +7,7 @@
 
         @csrf
         @method('PATCH');
-        
+
         <div class="col-8 offset-2">
 
         <!--div for editing the profile --> 

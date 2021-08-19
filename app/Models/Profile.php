@@ -11,6 +11,18 @@ class Profile extends Model
     
     protected $guarded = [];
 
+
+    //function for showing default image
+    public function profileImage()
+    {
+    
+    $imagePath= ($this->image)? $this->image: 'profile/default.webp';
+    return '/storage/'. $imagePath;
+
+
+    }
+
+
     //parent relationship between Profile.php and User.php
     public function user()
     {

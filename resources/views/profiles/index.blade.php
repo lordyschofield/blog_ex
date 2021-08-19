@@ -6,7 +6,7 @@
     <div class="row">
             
         <div class="col-3 p-5">
-                <img src="/img/logo.png" class="w-100 rounded-circle">
+                <img src="{{ $id->profile->profileImage()}}" class="w-100 rounded-circle">
         </div>
     
     <div class="col-9 p-5">
@@ -15,6 +15,10 @@
                             <div class="col-9 p-5">
                                 <div class="d-flex align-items-center pb-4">
                                 <h1>{{$id->username}} </h1>
+                                
+                                <follow-button user-id="{{ $id->id }}">
+                                    
+
                                 </div>
                             </div>
                         @can('update',$id->profile)

@@ -15,9 +15,12 @@ use App\Http\Controllers\Controller;
 |
 */
 Auth::routes();
+Route::post('/follow/{id}',[FollowController::class,'store']);
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::post('/p',[PostsController::class,'store']);
 Route::get('/p/create',[PostsController::class,'create']);
