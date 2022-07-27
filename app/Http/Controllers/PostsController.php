@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Intervention\Image\Facades\Image;
-
+use App\Models\Post;
 
 
 class PostsController extends Controller
@@ -59,4 +59,12 @@ class PostsController extends Controller
             return view('posts.show',compact('post'));
             
         }
+
+
+        public function destroy($post)
+    {
+        $posts = Post::find($post);
+        $posts->delete();
+        return redirect()->back()->with('status','Student Deleted Successfully');
+    }
 }

@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::post('/p',[PostsController::class,'store']);
 Route::get('/p/create',[PostsController::class,'create']);
 Route::get('/p/{post}',[PostsController::class,'show']);
+Route::get('delete/{id}', [PostsController::class, 'destroy']);
 
 Route::get('/profile/{id}', [ProfilesController::class,'index'])->name('profiles.index');
 Route::get('/profile/{id}/edit', [ProfilesController::class,'edit'])->name('profiles.edit');
